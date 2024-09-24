@@ -1,6 +1,8 @@
 #include <iostream>
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
+#define _USE_MATH_DEFINES
+#include <math.h>
 
 #include "shaderClass.h"
 #include "VAO.h"
@@ -23,6 +25,8 @@ GLuint indices[] = {
 	3, 2, 4,
 	5, 4, 1
 };
+
+void drawCircle(GLfloat x, GLfloat y, GLfloat z, GLfloat radius, GLint numberOfSides);
 
 
 int main() {
@@ -102,3 +106,35 @@ int main() {
 	glfwTerminate();
 	return 0;
 }
+
+//saker för framtida circlar
+//void drawCircle(GLfloat x, GLfloat y, GLfloat z, GLfloat radius, GLint numberOfSides) {
+//
+//	GLint numberOfVertices = numberOfSides + 2;
+//
+//	GLfloat doublePi = 2.0f * M_PI;
+//
+//	GLfloat circleVerticesX[numberOfVertices];
+//	GLfloat circleVerticesY[numberOfVertices];
+//	GLfloat circleVerticesZ[numberOfVertices];
+//
+//	circleVerticesX[0] = x;
+//	circleVerticesY[0] = y;
+//	circleVerticesZ[0] = z;
+//
+//	for (int i = 1; i < numberOfVertices; i++) {
+//
+//		circleVerticesX = x + (radius * cos(i * doublePi / numberOfSides));
+//		circleVerticesY = y + (radius * sin(i * doublePi / numberOfSides));
+//		circleVerticesZ = z;
+//	}
+//
+//	GLfloat allCircleVertices[numberOfVertices * 3];
+//
+//	for (int i = 0; i < numberOfVertices; i++) {
+//
+//		allCircleVertices[i * 3] = circleVerticesX[i];
+//		allCircleVertices[(i * 3) + 1] = circleVerticesY[i];
+//		allCircleVertices[(i * 3) + 2] = circleVerticesZ[i];
+//	}
+//}
