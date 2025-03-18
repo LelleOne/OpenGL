@@ -1,3 +1,4 @@
+#define GLFW_INCLUDE_NONE
 #include <iostream>
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
@@ -25,8 +26,6 @@ GLuint indices[] = {
 	3, 2, 4,
 	5, 4, 1
 };
-
-void drawCircle(GLfloat x, GLfloat y, GLfloat z, GLfloat radius, GLint numberOfSides);
 
 
 int main() {
@@ -80,7 +79,7 @@ int main() {
 
 		glClearColor(0.07f, 0.13f, 0.17f, 1.0f);
 
-		glClear(GL_COLOR_BUFFER_BIT),
+		glClear(GL_COLOR_BUFFER_BIT);
 
 		shaderProgram.Activate();
 		glUniform1f(uniID, 0.5f);
